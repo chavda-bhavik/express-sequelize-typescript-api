@@ -1,3 +1,4 @@
-import * as UsersService from './appusers'
+import * as UsersService from './AppUsersService'
+import * as LanguageService from './LanguagesService'
 
-export { UsersService }
+export { UsersService, LanguageService }

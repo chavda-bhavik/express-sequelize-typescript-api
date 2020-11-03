@@ -1,6 +1,7 @@
 import { Express, Request, Response, ErrorRequestHandler, NextFunction } from 'express';
 import * as winston from 'winston'
-import * as AppUsersRoutes from './appUsersRoutes'
+import * as AppUsersRoutes from './AppUsersRoutes'
+import * as LanguageRoutes from './LanguagesRoutes'
 
 interface ErrorType {
     statusCode: number
@@ -15,6 +16,7 @@ export function initRoutes(app: Express) {
     })
 
     AppUsersRoutes.routes(app);
+    LanguageRoutes.routes(app);
 
     app.use((err: ErrorType, req:Request, res:Response, next: NextFunction) => {
         if(err) {
@@ -23,5 +25,5 @@ export function initRoutes(app: Express) {
             res.end(JSON.stringify({message: err.message}));
         }
     })
-    app.all('*', (req:Request, res:Response) => res.boom.notFound())
+    app.all('*', (req:Request, res:Response) => res["boom"].notFound() )
 }

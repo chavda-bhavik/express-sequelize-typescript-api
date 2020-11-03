@@ -11,7 +11,9 @@
       "noLib": false,
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
+      "strictPropertyInitialization": false,
       "sourceMap": true,
+      "strict": true,
       "typeRoots": [
         "node_modules/@types"
       ],

@@ -6,7 +6,7 @@
     "host": "127.0.0.1",
     "dialect": "mysql",
     "logging": false,
-    "alter": true,
+    "force": true,
     "pool": {
       "max": 5,
       "min": 0,
